@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from ErrorBrowser.views import doc_view
 
 urlpatterns = [
+    path('doc/', doc_view, name='doc'),
+    path('home/', doc_view, name='home'),
     path('admin/', admin.site.urls),
 ]

@@ -10,5 +10,3 @@ def doc_view(request, *args, **kwargs):
     print(kwargs)
     return render(request, "docTemplate.html", {})
 
-
-    

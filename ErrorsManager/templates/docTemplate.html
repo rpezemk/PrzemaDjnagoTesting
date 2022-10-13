@@ -1,7 +1,57 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %} 
+    <link rel="stylesheet" href="{% static '/doc/main.js' %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+    <link rel="stylesheet"
+        href="{% static '/doc/styles.css' %}">
+    <link rel="shortcut icon"
+        href="{% static '/img/google-sheets-logo-.png' %}"
+        type="image/x-icon">
+    <title>Simple Spreadsheet</title>
+</head>
 
-{% block content %}
-<h1>
-    cześć {{ request.user }}
-</h1>
-{% endblock %}
+<body>
+    <div class="container">
+        <br/>
+        <h2 align="center">Multiple Line Insert into MySql using Ajax and jQuery in PHP</h2>
+        <br/>
+        <div class="table-responsive">
+            <table class="table table-bordered" id="crud_table">
+                <tr >
+                    <th width="30%">Item Name</th>
+                    <th width="10%">Item Code</th>
+                    <th width="45%">Description</th>
+                    <th width="10%">price</th>
+                    <th width="5%"></th>
+                </tr>
+                <tr id="DataRow">
+                  <td contenteditable="true" class="item_name"><select><option>1</option><option>2</option><option>3</option></select></td>
+                    <td contenteditable="true" class="item_code"></td>
+                    <td contenteditable="true" class="item_desc"></td>
+                    <td contenteditable="true" class="item_price"></td>
+                    <td></td>
+                </tr>
+            </table>
+            <div align="right">
+                <button type="button" name="add" id="add" class="btn btn-success btn-xs">+</button>
+            </div>
+            <div align="center">
+                <button type="button" name="save" id="save" class="btn btn-info">Save</button>
+            </div>
+            <br>
+            <div id="inserted_item_data"></div>
+        </div>
+    </div>
+
+    <script src="{% static '/doc/main.js' %}"></script>
+    
+
+</body>
+
+</html>

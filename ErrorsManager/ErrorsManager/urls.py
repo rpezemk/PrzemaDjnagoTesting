@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ErrorBrowser.views import doc_view
+from ErrorBrowser.views import doc_view, browseFilters_view, doc_view2
 
 urlpatterns = [
+    path('doc2/', doc_view2, name='doc2'),
     path('doc/', doc_view, name='doc'),
+    path('browseFilters/', browseFilters_view, name='browseFilters'),
     path('home/', doc_view, name='home'),
     path('admin/', admin.site.urls),
 ]

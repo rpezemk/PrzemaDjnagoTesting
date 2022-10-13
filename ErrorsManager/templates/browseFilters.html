@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>
+    cześć {{ request.user }}
+</h1>
+{% for def in definitions %}
+    {{ def.name }}
+    <table>
+        <tr>
+            <th>column Name</th>
+            <th>filter</th>
+            <th>regex mark</th>
+        </tr>
+        {% for errorFilter in def.errorFilters.all %}
+        <tr>
+            <td>{{ errorFilter.columnName }}</td>
+            <td>{{ errorFilter.value }}</td>
+            <td>{{ errorFilter.isRegex }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <table>
+        <tr>
+            <th>column Name</th>
+            <th>filter</th>
+            <th>regex mark</th>
+        </tr>
+        {% for stackFilter in def.stackFilters.all %}
+        <tr>
+            <td>{{ stackFilter.columnName }}</td>
+            <td>{{ stackFilter.value }}</td>
+            <td>{{ stackFilter.isRegex }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endfor %}
+{% endblock %}
